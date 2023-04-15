@@ -15,7 +15,10 @@ export class CostService {
     ]);
     const rootCompany = companies.find((com) => com.parentId === '0');
     if (!rootCompany) return [[]];
-    const rootCompanyCost: CompanyTreeCostDto = { ...rootCompany, children: [], cost: 0 };
+    const costRootCompany = travel
+      .filter((tra) => tra.companyId === rootCompany.id)
+      .reduce((x, y) => ({ price: +x.price + +y.price }), { price: 0 });
+    const rootCompanyCost: CompanyTreeCostDto = { ...rootCompany, children: [], cost: costRootCompany.price };
     const data = this.getTreeCompanyCost(rootCompanyCost, companies, travel);
     return [data];
   }
