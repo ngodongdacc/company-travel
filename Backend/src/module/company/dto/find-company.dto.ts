@@ -5,7 +5,15 @@ import { FindDto } from '../../../common/dto/find.dto';
 export class FindCompanyDto extends FindDto {
   @ApiProperty({
     required: false,
+    description: 'Search by name',
   })
   @IsOptional()
-  schema?: string;
+  name?: string;
+
+  @ApiProperty({
+    required: false,
+    description: 'Search by parentId',
+  })
+  @IsOptional()
+  parentId?: string;
 }

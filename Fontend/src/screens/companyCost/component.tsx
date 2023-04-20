@@ -42,7 +42,7 @@ const CategoryPage = () => {
   useEffect(() => {
     if (categoryData.data) {
       setState({
-        data: [categoryData.data],
+        data: categoryData.data,
       });
     }
   }, [categoryData]);

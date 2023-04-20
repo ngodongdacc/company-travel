@@ -1,12 +1,12 @@
-import { Controller, Get, UseInterceptors } from '@nestjs/common';
-import { ApiBadRequestResponse, ApiBearerAuth, ApiOperation, ApiTags, ApiUnauthorizedResponse } from '@nestjs/swagger';
+import { Controller, Get, Query, UseInterceptors } from '@nestjs/common';
+import { ApiBadRequestResponse, ApiOperation, ApiTags, ApiUnauthorizedResponse } from '@nestjs/swagger';
 import { ErrorResponseDto } from '../../common/dto/bad-request-response.dto';
 import { TransformInterceptor } from '../../interceptor/transformReq.interceptor';
 import { CostService } from './cost.service';
+import { FindCompanyDto } from '../company/dto/find-company.dto';
 
 @ApiTags('Company cost')
 @Controller()
-@ApiBearerAuth()
 @UseInterceptors(TransformInterceptor)
 @ApiUnauthorizedResponse({
   description: 'Forbidden.',
@@ -20,7 +20,7 @@ export class CostController {
 
   @Get()
   @ApiOperation({ summary: "returns the company's cost by tree" })
-  companyTreeCost() {
-    return this.costService.companyTreeCost();
+  companyTreeCost(@Query() query: FindCompanyDto) {
+    return this.costService.companyTreeCost(query);
   }
 }

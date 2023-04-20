@@ -5,7 +5,7 @@ export class FindDto {
   @ApiProperty({
     required: false,
     default: 0,
-    description: 'omit record number',
+    description: 'Omit record number',
   })
   @Transform(({ value }) => parseInt(value))
   @IsNumber()
@@ -15,7 +15,7 @@ export class FindDto {
   @ApiProperty({
     required: false,
     default: 10,
-    description: 'limit number of records per page',
+    description: 'Limit number of records per page',
   })
   @Transform(({ value }) => parseInt(value))
   @IsNumber()

@@ -12,11 +12,35 @@ export class TravelDto {
     required: true,
   })
   @IsOptional()
-  price: number;
+  price: number | string;
 
   @ApiProperty({
     required: true,
   })
   @IsOptional()
   companyId: string;
+
+  @ApiProperty({
+    required: true,
+  })
+  @IsOptional()
+  createdAt: string;
+
+  @ApiProperty({
+    required: true,
+  })
+  @IsOptional()
+  employeeName: string;
+
+  @ApiProperty({
+    required: true,
+  })
+  @IsOptional()
+  departure: string;
+
+  @ApiProperty({
+    required: true,
+  })
+  @IsOptional()
+  destination: string;
 }
