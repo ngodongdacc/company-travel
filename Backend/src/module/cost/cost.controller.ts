@@ -20,7 +20,7 @@ export class CostController {
 
   @Get()
   @ApiOperation({ summary: "returns the company's cost by tree" })
-  companyTreeCost(@Query() query: FindCompanyDto) {
-    return this.costService.companyTreeCost(query);
+  companyTreeCost() {
+    return this.costService.companyTreeCost();
   }
 }
