@@ -110,5 +110,3 @@ Basically, environment variables are located in the `.env` file. environment var
 
 ## Contact
 Copyright (c) 2023 ngodongdac
-
-[![@ngodongdacc](https://img.shields.io/badge/github-moleculerjs-green.svg)](https://github.com/ngodongdac)
