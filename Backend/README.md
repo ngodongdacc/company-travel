@@ -11,7 +11,7 @@ This repo is functionality complete — PRs and issues welcome!
 ### II. Enviroment variable
 Basically, environment variables are located in the `.env` file. environment variables:
 - APP_PORT=4007
-- API_DOMAIN='https://5f27781bf5d27e001612e057.mockapi.io'
+- API_DOMAIN=https://5f27781bf5d27e001612e057.mockapi.io
 
 ### II. Document api
 
@@ -33,7 +33,7 @@ Basically, environment variables are located in the `.env` file. environment var
         |   name    |   String      | Company name                       |
         |   parentId    |   String      | Parent company id                       |
         |   cost    |   Number      | Total cost of the company                       |
-        |   children    |   Array<CompanyCostResponse>      | List of subsidiaries                       |
+        |   children    |   Array<"CompanyCostResponse">      | List of subsidiaries                       |
 
     + **Failed** (Type Object) :
         | Property | Type | Description |
@@ -111,4 +111,4 @@ Basically, environment variables are located in the `.env` file. environment var
 ## Contact
 Copyright (c) 2023 ngodongdac
 
-[![@ngodongdacc](https://img.shields.io/badge/github-moleculerjs-green.svg)](https://github.com/moleculerjs)
+[![@ngodongdacc](https://img.shields.io/badge/github-moleculerjs-green.svg)](https://github.com/ngodongdac)
