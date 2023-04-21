@@ -26,6 +26,9 @@ export const getCompanyTreeCost = (
         parentId: company.parentId,
         children: [],
         cost: travelCostCompany.cost,
+        // cách 2
+        // children,
+        // cost: travelCostCompany.cost + costChildren,
       };
       companyChildren.push(companyTreeChildren);
     } else {
