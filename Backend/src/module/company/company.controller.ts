@@ -1,13 +1,18 @@
 import { Controller, Get, Query, UseInterceptors } from '@nestjs/common';
-import { ApiBadRequestResponse, ApiOperation, ApiTags, ApiUnauthorizedResponse } from '@nestjs/swagger';
+import { ApiBadRequestResponse, ApiOkResponse, ApiOperation, ApiTags, ApiUnauthorizedResponse } from '@nestjs/swagger';
 import { ErrorResponseDto } from '../../common/dto/bad-request-response.dto';
 import { TransformInterceptor } from '../../interceptor/transformReq.interceptor';
 import { CompanyService } from './company.service';
 import { FindCompanyDto } from './dto/find-company.dto';
+import { CompanyResponseDto } from './dto/companyResponse.dto';
 
 @ApiTags('company')
 @Controller()
 @UseInterceptors(TransformInterceptor)
+@ApiOkResponse({
+  description: 'success',
+  type: CompanyResponseDto,
+})
 @ApiUnauthorizedResponse({
   description: 'Forbidden.',
 })

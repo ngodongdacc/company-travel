@@ -1,9 +1,9 @@
 import { Controller, Get, Query, UseInterceptors } from '@nestjs/common';
-import { ApiBadRequestResponse, ApiOperation, ApiTags, ApiUnauthorizedResponse } from '@nestjs/swagger';
+import { ApiBadRequestResponse, ApiOkResponse, ApiOperation, ApiTags, ApiUnauthorizedResponse } from '@nestjs/swagger';
 import { ErrorResponseDto } from '../../common/dto/bad-request-response.dto';
 import { TransformInterceptor } from '../../interceptor/transformReq.interceptor';
 import { CostService } from './cost.service';
-import { FindCompanyDto } from '../company/dto/find-company.dto';
+import { CompanyTreeCostResponseDto } from './dto/companyTreeCostResponse.dto';
 
 @ApiTags('Company cost')
 @Controller()
@@ -19,6 +19,10 @@ export class CostController {
   constructor(private readonly costService: CostService) {}
 
   @Get()
+  @ApiOkResponse({
+    description: 'success',
+    type: CompanyTreeCostResponseDto,
+  })
   @ApiOperation({ summary: "returns the company's cost by tree" })
   companyTreeCost() {
     return this.costService.companyTreeCost();
