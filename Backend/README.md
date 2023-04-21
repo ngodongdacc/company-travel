@@ -47,7 +47,7 @@ Basically, environment variables are located in the `.env` file. environment var
 - **Router** : path : "/company"
 - **Params** : 
     |Property| Type | requied | Description |
-    |------ | ------ | ------ |
+    |------ | ------ | ------ |------ |
     |   skip      |   Number     | false | Number of records ignored (0)   |
     |   limit    |   Number      | false | Number of records retrieved (10)                       |
     |   name   |   string     | false | Look for information by field "name"                      |
@@ -77,8 +77,8 @@ Basically, environment variables are located in the `.env` file. environment var
 - **Method** : GET
 - **Router** : path : "/company/travel"
 - **Params** : 
-    |Property| Type | requied | Description |
-    |------ | ------ | ------ |
+    |Property | Type | requied | Description |
+    |------ | ------ | ------ |------ |
     |   skip      |   Number     | false | Number of records ignored (0)   |
     |   limit    |   Number      | false | Number of records retrieved (10)                       |
     |   search   |   string     | false | Look for information           |
